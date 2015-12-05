@@ -263,69 +263,86 @@
   </div>
   <!-- Page: PostCard  -->
   <div id="PostCard" data-role="page" is="page">
-    <div data-role="header" data-position="fixed">
-      <h3>天成飯店</h3>
-      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+  <div data-role="header" data-position="fixed">
+    <h3>天成飯店</h3>
+    <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+  </div>
+  <div role="main" class="ui-content" is="content">
+    <div id="gk-1255bNG" is="capture-photo"></div>
+    <div class="ui-field-contain">
+      <label for="gk-125y8fT">Name：</label>
+      <input type="text" name id="gk-125y8fT">
     </div>
-    <div role="main" class="ui-content" is="content">
-      <h1 is="gk-text">直走右轉10公尺</h1>
+    <div class="ui-field-contain">
+      <label for="gk-125y8fT">E-mail：</label>
+      <input type="text" name id="gk-125y8fT">
     </div>
-    <div data-position="fixed" data-role="footer">
-      <div data-role="navbar">
-        <ul>
-          <li>
-            <a data-icon="home" href="#Info">平面資訊</a>
-          </li>
-          <li>
-            <a data-icon="star" href="#Trip">旅遊資訊</a>
-          </li>
-          <li>
-            <a data-icon="check" href="#Mission">大廳任務</a>
-          </li>
-          <li>
-            <a data-icon="edit" href="#PostCard">自製明信片</a>
-          </li>
-          <li>
-            <a data-icon="calendar" href="#Message">留言板</a>
-          </li>
-        </ul>
-      </div>
+    <div class="ui-field-contain">
+      <label for="gk-125y8fT">Content：</label>
+      <input type="text" name id="gk-125y8fT">
+    </div>
+    <a id="gk-1255bNG-btn" class="ui-btn ui-icon-camera ui-btn-icon-left">Take A Photo (Smile)</a>
+  </div>
+  <div data-position="fixed" data-role="footer">
+    <div data-role="navbar">
+      <ul>
+        <li>
+          <a data-icon="home" href="#Info">平面資訊</a>
+        </li>
+        <li>
+          <a data-icon="star" href="#Trip">旅遊資訊</a>
+        </li>
+        <li>
+          <a data-icon="check" href="#Mission">大廳任務</a>
+        </li>
+        <li>
+          <a data-icon="edit" href="#PostCard">自製明信片</a>
+        </li>
+        <li>
+          <a data-icon="calendar" href="#Message">留言板</a>
+        </li>
+      </ul>
     </div>
   </div>
+</div>
   <!-- Page: Message  -->
   <div id="Message" data-role="page" is="page">
-    <div data-role="header" data-position="fixed">
-      <h3>天成飯店</h3>
-      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+  <div data-role="header" data-position="fixed">
+    <h3>天成飯店</h3>
+    <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+  </div>
+  <div role="main" class="ui-content" is="content">
+    <div class="ui-field-contain">
+      <label for="gk-125J5B6">您想說的話：</label>
+      <input type="text" name id="gk-125J5B6" data-clear-btn="true">
     </div>
-    <div role="main" class="ui-content" is="content">
-      <div class="ui-field-contain">
-        <label for="gk-125J5B6">想說的話：</label>
-        <input type="text" name id="gk-125J5B6" data-clear-btn="true">
-      </div>
-    </div>
-    <div data-position="fixed" data-role="footer">
-      <div data-role="navbar">
-        <ul>
-          <li>
-            <a data-icon="home" href="#Info">平面資訊</a>
-          </li>
-          <li>
-            <a data-icon="star" href="#Trip">旅遊資訊</a>
-          </li>
-          <li>
-            <a data-icon="check" href="#Mission">大廳任務</a>
-          </li>
-          <li>
-            <a data-icon="edit" href="#PostCard">自製明信片</a>
-          </li>
-          <li>
-            <a data-icon="calendar" href="#Message">留言板</a>
-          </li>
-        </ul>
-      </div>
+    <h1 is="gk-text">服務很好!!!</h1>
+    <h1 is="gk-text">早餐好吃~~~</h1>
+    <h1 is="gk-text">Very nice!!!</h1>
+    <h1 is="gk-text">...</h1>
+  </div>
+  <div data-position="fixed" data-role="footer">
+    <div data-role="navbar">
+      <ul>
+        <li>
+          <a data-icon="home" href="#Info">平面資訊</a>
+        </li>
+        <li>
+          <a data-icon="star" href="#Trip">旅遊資訊</a>
+        </li>
+        <li>
+          <a data-icon="check" href="#Mission">大廳任務</a>
+        </li>
+        <li>
+          <a data-icon="edit" href="#PostCard">自製明信片</a>
+        </li>
+        <li>
+          <a data-icon="calendar" href="#Message">留言板</a>
+        </li>
+      </ul>
     </div>
   </div>
+</div>
   <!-- Page: Floor  -->
   <div id="Floor" data-role="page" is="page">
   <div data-role="header" data-position="fixed">
@@ -339,7 +356,7 @@
         <div is="icon" style="width:500px; height:800px; position:center">
           <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>
           <a href="#" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image: url(https://goo.gl/04k3V1); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
-          <div style="text-align:center;"><h3 is="gk-text">一樓--旅遊諮詢、服務櫃台、餐廳</h3></div>
+          <div style="text-align:center;"><h3 is="gk-text">一樓平面圖--旅遊諮詢、服務櫃台、餐廳</h3></div>
         </div>
       </div>
       <div class="ui-block-c" style="height:100%"></div>

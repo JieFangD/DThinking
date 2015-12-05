@@ -6,34 +6,316 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link href="http://jqmdesigner.appspot.com/gk/lib/jquery.mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    $(document).on("mobileinit", function () {
+      $.mobile.autoInitializePage = false;
+      $.mobile.hashListeningEnabled = false;
+    });
+
+    function mobileInitPage() {
+      $.mobile.hashListeningEnabled = true;
+      $.mobile.initializePage();
+    };
+  </script>
   <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <!-- Uncomment the following to include cordova in your android project -->
   <!--<script src="http://jqmdesigner.appspot.com/platforms/android/cordova.js"></script>-->
+  <!-- GK Loader use RequireJS to load module -->
+  <script src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
+  <!--Plug in GK-->
+  <script src="http://jqmdesigner.appspot.com/components/jquery.gk/jquery.gk.min.js"></script>
+  <!-- Load GK components -->
+  <script components="http://jqmdesigner.appspot.com/components/gk-jquerymobile/content.html,http://jqmdesigner.appspot.com/components/gk-jquerymobile/icon.html,http://jqmdesigner.appspot.com/components/gk-jquerymobile/page.html,http://jqmdesigner.appspot.com/components/gk-ext/gk-text.html"
+  callback="mobileInitPage" src="http://jqmdesigner.appspot.com/components/gk-loader/gk-loader.js"></script>
   <title>EZo App</title>
 </head>
 
-<body>
+<body gk-app>
   <!-- Page: home  -->
   <div id="home" data-role="page">
-    <div role="main" class="ui-content"></div>
+    <div data-role="header" data-position="fixed">
+      <h3>天成飯店</h3>
+      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left">首頁</a>
+    </div>
+    <div role="main" class="ui-content">
+      <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider">本日活動</li>
+        <li>
+          <a href="#Direct" data-transition="fade">一樓XX廳喜宴</a>
+        </li>
+        <li>
+          <a href="#Direct" data-transition="fade">一樓D-School討論</a>
+        </li>
+        <li>
+          <a href="#Direct" data-transition="fade">二樓XX廳公司活動</a>
+        </li>
+        <li>
+          <a href="#Direct" data-transition="fade">...</a>
+        </li>
+      </ul>
+    </div>
     <div data-position="fixed" data-role="footer">
       <div data-role="navbar">
         <ul>
           <li>
-            <a data-icon="home">BtnA</a>
+            <a data-icon="home" href="#Info">平面資訊</a>
           </li>
           <li>
-            <a data-icon="star">BtnB</a>
+            <a data-icon="star" href="#Trip">旅遊資訊</a>
           </li>
           <li>
-            <a data-icon="home">BtnA</a>
+            <a data-icon="check" href="#Mission">大廳任務</a>
           </li>
           <li>
-            <a data-icon="star">BtnB</a>
+            <a data-icon="edit" href="#PostCard">自製明信片</a>
+          </li>
+          <li>
+            <a data-icon="calendar" href="#Message">留言板</a>
           </li>
         </ul>
       </div>
     </div>
+  </div>
+  <!-- Page: Direct  -->
+  <div id="Direct" data-role="page" is="page">
+    <div data-role="header" data-position="fixed">
+      <h3>天成飯店</h3>
+      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+    </div>
+    <div role="main" class="ui-content" is="content">
+      <h1 is="gk-text">直走右轉10公尺</h1>
+    </div>
+    <div data-position="fixed" data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a data-icon="home" href="#Info">平面資訊</a>
+          </li>
+          <li>
+            <a data-icon="star" href="#Trip">旅遊資訊</a>
+          </li>
+          <li>
+            <a data-icon="check" href="#Mission">大廳任務</a>
+          </li>
+          <li>
+            <a data-icon="edit" href="#PostCard">自製明信片</a>
+          </li>
+          <li>
+            <a data-icon="calendar" href="#Message">留言板</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Page: Info  -->
+  <div id="Info" data-role="page" is="page">
+    <div data-role="header" data-position="fixed">
+      <h3>天成飯店</h3>
+      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+    </div>
+    <div role="main" class="ui-content" is="content">
+      <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider">平面資訊</li>
+        <li>
+          <a href="#Floor">一樓</a>
+        </li>
+        <li>
+          <a href="#Floor">二樓</a>
+        </li>
+        <li>
+          <a href="#Floor">三樓</a>
+        </li>
+        <li>
+          <a href="#Floor">...</a>
+        </li>
+      </ul>
+    </div>
+    <div data-position="fixed" data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a data-icon="home" href="#Info">平面資訊</a>
+          </li>
+          <li>
+            <a data-icon="star" href="#Trip">旅遊資訊</a>
+          </li>
+          <li>
+            <a data-icon="check" href="#Mission">大廳任務</a>
+          </li>
+          <li>
+            <a data-icon="edit" href="#PostCard">自製明信片</a>
+          </li>
+          <li>
+            <a data-icon="calendar" href="#Message">留言板</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Page: Trip  -->
+  <div id="Trip" data-role="page" is="page">
+    <div data-role="header" data-position="fixed">
+      <h3>天成飯店</h3>
+      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+    </div>
+    <div role="main" class="ui-content" is="content">
+      <h1 is="gk-text">直走右轉10公尺</h1>
+    </div>
+    <div data-position="fixed" data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a data-icon="home" href="#Info">平面資訊</a>
+          </li>
+          <li>
+            <a data-icon="star" href="#Trip">旅遊資訊</a>
+          </li>
+          <li>
+            <a data-icon="check" href="#Mission">大廳任務</a>
+          </li>
+          <li>
+            <a data-icon="edit" href="#PostCard">自製明信片</a>
+          </li>
+          <li>
+            <a data-icon="calendar" href="#Message">留言板</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Page: Mission  -->
+  <div id="Mission" data-role="page" is="page">
+    <div data-role="header" data-position="fixed">
+      <h3>天成飯店</h3>
+      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+    </div>
+    <div role="main" class="ui-content" is="content">
+      <h1 is="gk-text">直走右轉10公尺</h1>
+    </div>
+    <div data-position="fixed" data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a data-icon="home" href="#Info">平面資訊</a>
+          </li>
+          <li>
+            <a data-icon="star" href="#Trip">旅遊資訊</a>
+          </li>
+          <li>
+            <a data-icon="check" href="#Mission">大廳任務</a>
+          </li>
+          <li>
+            <a data-icon="edit" href="#PostCard">自製明信片</a>
+          </li>
+          <li>
+            <a data-icon="calendar" href="#Message">留言板</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Page: PostCard  -->
+  <div id="PostCard" data-role="page" is="page">
+    <div data-role="header" data-position="fixed">
+      <h3>天成飯店</h3>
+      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+    </div>
+    <div role="main" class="ui-content" is="content">
+      <h1 is="gk-text">直走右轉10公尺</h1>
+    </div>
+    <div data-position="fixed" data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a data-icon="home" href="#Info">平面資訊</a>
+          </li>
+          <li>
+            <a data-icon="star" href="#Trip">旅遊資訊</a>
+          </li>
+          <li>
+            <a data-icon="check" href="#Mission">大廳任務</a>
+          </li>
+          <li>
+            <a data-icon="edit" href="#PostCard">自製明信片</a>
+          </li>
+          <li>
+            <a data-icon="calendar" href="#Message">留言板</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Page: Message  -->
+  <div id="Message" data-role="page" is="page">
+    <div data-role="header" data-position="fixed">
+      <h3>天成飯店</h3>
+      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+    </div>
+    <div role="main" class="ui-content" is="content">
+      <h1 is="gk-text">直走右轉10公尺</h1>
+    </div>
+    <div data-position="fixed" data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a data-icon="home" href="#Info">平面資訊</a>
+          </li>
+          <li>
+            <a data-icon="star" href="#Trip">旅遊資訊</a>
+          </li>
+          <li>
+            <a data-icon="check" href="#Mission">大廳任務</a>
+          </li>
+          <li>
+            <a data-icon="edit" href="#PostCard">自製明信片</a>
+          </li>
+          <li>
+            <a data-icon="calendar" href="#Message">留言板</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Page: Floor  -->
+  <div id="Floor" data-role="page" is="page">
+    <div data-role="header" data-position="fixed">
+      <h3>天成飯店</h3>
+      <a class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-left" href="#home" data-transition="slideup">首頁</a>
+    </div>
+    <div role="main" class="ui-content" is="content">
+      <div is="icon" style="width:300px; height:500px; position:relative">
+        <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>
+        <a href="#" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image: url(http://jqmdesigner.appspot.com/images/image.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
+        <div style="text-align:center;">
+          <h3 is="gk-text">一樓--旅遊諮詢、服務櫃台、餐廳</h3>
+        </div>
+      </div>
+    </div>
+    <div data-position="fixed" data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a data-icon="home" href="#Info">平面資訊</a>
+          </li>
+          <li>
+            <a data-icon="star" href="#Trip">旅遊資訊</a>
+          </li>
+          <li>
+            <a data-icon="check" href="#Mission">大廳任務</a>
+          </li>
+          <li>
+            <a data-icon="edit" href="#PostCard">自製明信片</a>
+          </li>
+          <li>
+            <a data-icon="calendar" href="#Message">留言板</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Page: NewPage  -->
+  <div id="NewPage" data-role="page" is="page">
+    <div role="main" class="ui-content" is="content"></div>
   </div>
 </body>
 
